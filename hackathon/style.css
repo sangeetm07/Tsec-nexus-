@@ -369,18 +369,19 @@ section h2{
 /* =========================
    CAMPUS SECTION
 ========================= */
+/* =========================
+   CAMPUS SECTION
+========================= */
+
 
 .campus{
 
     background:#0B1736;
 
-}
-
-.campus h2{
-
-    color:#fff;
+    min-height:700px;
 
 }
+
 
 .campus p{
 
@@ -388,57 +389,174 @@ section h2{
 
     color:#CBD5E1;
 
-    margin-bottom:60px;
+    margin-bottom:50px;
 
 }
+
+
+/* Campus Map */
 
 .campus-map{
 
-    display:grid;
+    position:relative;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    height:450px;
 
-    gap:35px;
+    width:100%;
 
-    margin-top:30px;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
 
 }
 
-.building{
+
+
+/* Character */
+
+.character{
+
+    position:absolute;
+
+    left:5%;
+
+    bottom:60px;
+
+    z-index:5;
+
+    animation:walk 8s infinite linear;
+
+}
+
+
+.character img{
+
+    width:90px;
+
+}
+
+
+
+/* Walking Animation */
+
+@keyframes walk{
+
+
+0%{
+
+left:5%;
+
+}
+
+
+25%{
+
+left:25%;
+
+}
+
+
+50%{
+
+left:50%;
+
+}
+
+
+75%{
+
+left:75%;
+
+}
+
+
+100%{
+
+left:5%;
+
+}
+
+
+}
+
+
+
+
+/* Rooms */
+
+
+.room{
+
+    position:relative;
+
+    width:200px;
+
+    height:180px;
 
     background:rgba(255,255,255,.08);
 
-    border:1px solid rgba(255,255,255,.15);
-
-    backdrop-filter:blur(20px);
+    border:2px solid rgba(255,255,255,.2);
 
     border-radius:25px;
 
-    padding:40px 25px;
+    backdrop-filter:blur(15px);
 
-    text-align:center;
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
 
     cursor:pointer;
 
     transition:.4s;
 
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.room::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+
+    height:20px;
+
+    background:#FFD54F;
+
+    bottom:0;
+
+    border-radius:20px;
+
+    opacity:.3;
 
 }
 
-.building:hover{
 
-    transform:translateY(-12px) scale(1.03);
+/* Room Hover */
+
+.room:hover{
 
     background:#2563EB;
 
-    box-shadow:0 20px 45px rgba(37,99,235,.45);
+    transform:translateY(-15px) scale(1.05);
+
+    box-shadow:0 20px 40px rgba(37,99,235,.5);
 
 }
 
-.building i{
 
-    font-size:60px;
+
+.room i{
+
+    font-size:50px;
 
     color:#FFD54F;
 
@@ -446,14 +564,15 @@ section h2{
 
 }
 
-.building h3{
 
-    font-size:26px;
 
-    font-weight:600;
+.room h3{
+
+    font-size:22px;
+    text-align: center;
+    
 
 }
-
 
 /* =========================
    STATS
@@ -462,7 +581,7 @@ section h2{
 .stats{
 
     display:grid;
-
+    
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 
     gap:30px;
@@ -1414,11 +1533,11 @@ footer{
     
     }
     
-    .building{
-    
-    animation:float 4s ease-in-out infinite;
-    
-    }
+    .room{
+
+        animation:float 4s ease-in-out infinite;
+        
+        }
     
     .story-card{
     
@@ -1477,4 +1596,3 @@ footer{
     color:#08152E;
     
     }
-    
